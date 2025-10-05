@@ -12,9 +12,12 @@ const NumError = error{IllegalNumber};
 pub fn main() void {
     var stdout = std.fs.File.stdout().writer(&.{});
 
-    const my_num: u32 = getNumber();
-
-    try stdout.interface.print("my_num={}\n", .{my_num});
+    const my_num_e: NumError!u32 = getNumber();
+    if (my_num_e) |my_num| {
+        try stdout.interface.print("my_num={}\n", .{my_num});
+    } else {
+        try stdout.interface.print("my_num={}\n", .{42});
+    }
 }
 
 // This function is obviously weird and non-functional. But you will not be changing it for this quiz.
