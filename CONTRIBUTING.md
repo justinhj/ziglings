@@ -111,3 +111,8 @@ Double-check everything by asking the magical Eowyn:
 If all tests pass: You are done!
 
 Don’t forget to commit the patch file.
+
+   513  Chris Boesch
+   306  Dave Gauer
+    91  Manlio Perillo
+    16  Alexander Sisco
