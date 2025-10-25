@@ -29,16 +29,23 @@
 const print = @import("std").debug.print;
 
 pub fn main() void {
+
+    const test1 = struct {
+        num_cats: u32
+    } {
+        .num_cats = 12
+    };
+
     printCircle(.{
         .center_x = @as(u32, 205),
         .center_y = @as(u32, 187),
-        .radius = @as(u32, 12),
+        .radius = @as(u32, test1.num_cats),
     });
 }
 
 // Please complete this function which prints an anonymous struct
 // representing a circle.
-fn printCircle(???) void {
+fn printCircle(circle: anytype) void {
     print("x:{} y:{} radius:{}\n", .{
         circle.center_x,
         circle.center_y,
